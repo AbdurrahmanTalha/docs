@@ -1,0 +1,92 @@
+---
+title: Blocking ads, cookie banners and chat widgets
+---
+
+During scraping or taking screenshots, unwanted elements such as ads, chat widgets, cookie banners, etc., can appear on the page. These elements can be annoying and ruin the quality of the screenshots. To solve this problem, ScrapeAutomate provides flexibility to block these elements from appearing on the page.
+
+## Blocking Ads
+
+We all know how annoying ads can be—they ruin the quality of screenshots and make pages look unprofessional. Ads can also slow down page load times.
+
+To block ads, include the `block_ads` query parameter in your request and set it to `true`. Here is an example:
+
+```http
+GET /scraper?api_key=<exampleToken>&render=true&url=https%253A%252F%252Fexample.com%252F&block_ads=true HTTP/1.1
+Host: <your_api_host>
+```
+
+<Note>
+  If ads are still appearing, please create a support ticket so we can
+  investigate the issue.
+</Note>
+
+## Blocking Chat Widgets
+
+Chat widgets can be distracting and unnecessary. For example, if you are taking screenshots for a blog post, you may not want chat widgets in the screenshots. To block chat widgets, use the `block_chat_widgets` query parameter and set it to `true`. Here’s an example:
+
+```http
+GET /scraper?api_key=<exampleToken>&render=true&url=https%253A%252F%252Fexample.com%252F&block_chat_widgets=true HTTP/1.1
+Host: <your_api_host>
+```
+
+<Note>
+  If chat widgets are still appearing, create a support ticket for further
+  investigation.
+</Note>
+
+## Blocking Cookie Banners
+
+Cookie banners often appear due to privacy regulations. They may require user interaction, which can interfere with automation and screenshots. To block them, use the `block_cookie_banners` query parameter:
+
+```http
+GET /scraper?api_key=<exampleToken>&render=true&url=https%253A%252F%252Fexample.com%252F&block_cookie_banners=true HTTP/1.1
+Host: <your_api_host>
+```
+
+## Blocking Resources
+
+To optimize performance or avoid loading unnecessary elements, use the `block_resources` query parameter. This feature allows blocking specific resource types such as stylesheets, images, and scripts.
+
+### Available Resource Types
+
+- **stylesheet**: CSS files used to style the page.
+- **image**: Images on the page.
+- **media**: Audio and video files.
+- **font**: Font files used on the page.
+- **script**: JavaScript files (e.g., tracking scripts).
+- **texttrack**: Subtitle and caption files.
+- **xhr**: XMLHttpRequests fetching data from the server.
+- **fetch**: Fetch API requests.
+- **eventsource**: Server-sent events (SSE) pushing data to the client.
+- **manifest**: Web app manifest files providing metadata.
+- **other**: Any other resource types not listed above.
+
+To block resources, specify the resource types you want to block. Separate multiple types with a comma. Example:
+
+```http
+GET /scraper?api_key=<exampleToken>&render=true&url=https%253A%252F%252Fexample.com%252F&block_resources=image%2C%20media%2C%20font HTTP/1.1
+Host: <your_api_host>
+```
+
+<Note>
+  Blocking resources may break page layout or functionality. If you experience
+  issues, create a support ticket.
+</Note>
+
+## FAQ
+
+<AccordionGroup>
+
+<Accordion title="Could blocking resources break the page layout or functionality?">
+  Yes, blocking resources can impact page layout or functionality. For example,
+  blocking CSS files may cause styling issues, and blocking JavaScript files may
+  disrupt interactive elements, especially for SPAs (Single Page Applications).
+</Accordion>
+
+<Accordion title="How do I know if I’m using these features correctly?">
+  If your requests are working as intended—ads are gone, chat widgets are
+  blocked, and pages load faster—you’re doing it right! If something seems off
+  or isn’t working, feel free to reach out for support.
+</Accordion>
+
+</AccordionGroup>

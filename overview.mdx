@@ -1,0 +1,97 @@
+---
+title: Overview
+sidebar_position: 2
+---
+
+Here is a list of different `parameters` you can use with ScrapeAutomate. This overview will help you get started with ScrapeAutomate while ensuring secure usage of your credentials.
+
+### Query Parameters
+
+| PARAMETER                                                      | TYPE     | DEFAULT | DESCRIPTION                                                                                                                                                                              |
+| -------------------------------------------------------------- | -------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [api_key](/docs/overview#api-key)                              | string   |         | Your API key is used to validate your requests                                                                                                                                           |
+| [url](/docs/overview#url)                                      | string   |         | The URL you want to scrape                                                                                                                                                               |
+| [render](/docs/overview#render)                                | boolean  | false   | Render the JavaScript on the page with a headless browser.                                                                                                                               |
+| [window_width](/docs/rendering#window-width--height)           | number   | 1920    | Set the width of the browser                                                                                                                                                             |
+| [window_height](/docs/rendering#window-width--height)          | number   | 1080    | Set the height of the browser                                                                                                                                                            |
+| [markdown](/docs/output#markdown)                              | boolean  | false   | Get the response in markdown format                                                                                                                                                      |
+| [screenshot](/docs/output#viewport-screenshot)                 | boolean  | false   | This parameter is used to take a screenshot of the visible area once the API processing is complete                                                                                      |
+| [screenshot_full_page](/docs/output#full-page-screenshot)      | boolean  | false   | This parameter is used to take a screenshot of the entire website when the API processing is complete                                                                                    |
+| [instructions](/docs/rendering#instructions)                   | object[] |         | Give instructions to ScrapeAutomate, such as clicking, waiting, filling input fields, etc.                                                                                               |
+| [proxy_type](/docs/proxy#proxy-type)                           | string   |         | Select the proxy type for better anonymity, performance, and speed                                                                                                                       |
+| [proxy_country](/docs/proxy#proxy-country)                     | string   |         | Select the geographical location of your proxy.                                                                                                                                          |
+| [workflow_id](/docs/workflow#using-an-workflow)                | string   |         | This parameter is used to reuse configurations using an API workflow!                                                                                                                    |
+| [webhook_url](/docs/output#webhook)                            | string   |         | This parameter is used for setting a webhook where the response will be sent.                                                                                                            |
+| [block_resources](/docs/blocking#block-resources)              | string   |         | Blocks specific web resources (stylesheets, images, media, etc.) during automation. Separate multiple resources with ",". Useful for faster scraping and preventing unnecessary loading. |
+| [block_ads](/docs/blocking#blocking-ads)                       | string   |         | Automatically block ads from appearing.                                                                                                                                                  |
+| [block_cookie_banners](/docs/blocking#blocking-cookie-banners) | string   |         | Automatically block cookie banners from appearing in the UI.                                                                                                                             |
+| [block_chat_widgets](/docs/blocking#blocking-chat-widgets)     | string   |         | Automatically block chat widgets from appearing in the UI.                                                                                                                               |
+
+## Getting Started
+
+ScrapeAutomate is one of the easiest scraping tools available on the web.
+
+To get started with scraping, you only need **two** things:
+
+- Your unique `api_key`
+- The `Encoded URL` of the web page you want to scrape.
+
+<Info>
+  You can get your **API key** after creating an account on
+  [ScrapeAutomate](https://).
+</Info>
+
+### API Key
+
+Your unique API key is essential to authenticate every API request. After creating and verifying your account on <a href="/">ScrapeAutomate</a>, your API key will be visible on the builder page as highlighted in the image below.
+
+![](./assets/api-key.png)
+
+You must include the `api_key` in every request as a query parameter; otherwise, the API will not respond because the key is used to validate the request.
+
+#### Code Example
+
+```sh
+curl --request GET \
+  --url '<EnvValue name="dashboardAPI"/>/scraper?api_key=<exampleToken>'
+```
+
+<Warning>
+  Do not share your **API key** with anyone. Sharing your API key can lead to
+  **unauthorized access, unexpected charges, and potential security
+  vulnerabilities**.
+</Warning>
+
+### URL
+
+You must provide an `encoded-URL` to use ScrapeAutomate API. Encoding ensures that the URL is processed correctly by the API and that special characters (like spaces, question marks, and ampersands) do not cause issues.
+
+You can use websites like [urlencoder](https://www.urlencoder.org/) to easily encode your URLs.
+
+![](./assets/url-encoder.png)
+
+After encoding the URL, pass it in the query parameter named `url` as shown below:
+
+```shell
+curl --request GET \
+  --url '<EnvValue name="dashboardAPI"/>/scraper?api_key=<exampleToken>&url=https%3A%2F%2Fexample.com''
+```
+
+<Note>
+  The `url` parameter and `api_key` are both required. If any of these
+  parameters are missing, your request won't be processed.
+</Note>
+
+### Render
+
+The **render** parameter is a boolean value that determines whether ScrapeAutomate should render javascript while scraping. Setting render to `true` enables features like taking screenshots, blocking specific resources, form-filling, and clicking elements.
+
+```shell
+curl --request GET \
+  --url '<EnvValue name="dashboardAPI"/>/scraper?api_key=<exampleToken>&render=true&url=https%3A%2F%2Fexample.com''
+```
+
+<Info>
+  By default, the **render** parameter is set to `false`. Note that launching a
+  browser consumes more ten times more credits.
+</Info>
