@@ -22,16 +22,14 @@
   "tabs": [
     {
       "name": "API Reference",
-      "url": "api-reference"
+      "url": "api-reference",
+      "openapi": "/api-reference/openapi.json"
     }
   ],
   "navigation": [
     {
       "group": "Get Started",
-      "pages": [
-        "introduction",
-        "overview"
-      ]
+      "pages": ["introduction", "overview", "essentials/rendering"]
     },
     {
       "group": "Core Features",
@@ -43,17 +41,11 @@
     },
     {
       "group": "API Documentation",
-      "pages": [
-        "endpoints/history",
-        "endpoints/workflow",
-        "endpoints/errors"
-      ]
+      "pages": ["endpoints/history", "endpoints/workflow", "endpoints/errors"]
     },
     {
       "group": "Miscellaneous",
-      "pages": [
-        "/miscellaneous/payment"
-      ]
+      "pages": ["/miscellaneous/payment"]
     }
   ],
   "footerSocials": {

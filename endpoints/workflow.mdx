@@ -30,7 +30,7 @@ API Workflow is a feature in ScrapeAutomate that allows users to save, and reuse
         After copying the ID, send the workflow id as a query parameter with your api key to run the scraping request, After you run the request you should get the response:
 
         ```bash
-        curl --request GET --url 'https://api.example.com/scraper?api_key=YOUR_API_KEY&workflow_id=cm1zwux5s000012i655qokya5'
+        curl --request GET --url 'https://api.scrapeautomate.com/api/scraper?api_key=YOUR_API_KEY&workflow_id=cm1zwux5s000012i655qokya5'
         ```
 
         Keep in mind that if you are using any kind of webhook, you will get the response at the webhook rather then directly getting the response. Instead you might an response saying:
@@ -69,7 +69,7 @@ API Workflow is a feature in ScrapeAutomate that allows users to save, and reuse
         To get all of a user's workflows you will need to send a `GET` request to this api route along with your api key, if your api key is invalid then the api won't return your workflows and instead return an error. Here is an example request:
 
         ```bash
-        curl "https://api.example.com/workflow/?api_key=YOUR_API_KEY"
+        curl "https://api.scrapeautomate.com/api/workflow/?api_key=YOUR_API_KEY"
         ```
 
         You should get a response like this:
@@ -102,7 +102,7 @@ API Workflow is a feature in ScrapeAutomate that allows users to save, and reuse
         Using the workflow id send an GET request to the following URL with your api key and workflow id like this:
 
         ```bash
-        curl "https://api.example.com/workflow/requests/${requestId}/?api_key=YOUR_API_KEY"
+        curl "https://api.scrapeautomate.com/api/workflow/requests/${requestId}/?api_key=YOUR_API_KEY"
         ```
 
         If everything is correct, In the response you should see an array of requests which were made using that workflow.
@@ -113,7 +113,7 @@ API Workflow is a feature in ScrapeAutomate that allows users to save, and reuse
         Creating an api workflow using the api is very simple, to create a workflow send an POST request to following API:
 
         ```bash
-        https://api.example.com/workflow/create/?api_key=YOUR_API_KEY
+        https://api.scrapeautomate.com/api/workflow/create/?api_key=YOUR_API_KEY
         ```
 
         In the body you have to send an JSON object which contains the following data:
@@ -128,7 +128,7 @@ API Workflow is a feature in ScrapeAutomate that allows users to save, and reuse
         If everything is correct you should have a response with the created workflow. Here is an example request:
 
         ```bash
-        curl -X POST "https://api.example.com/workflow/create/?api_key=YOUR_API_KEY" \
+        curl -X POST "https://api.scrapeautomate.com/api/workflow/create/?api_key=YOUR_API_KEY" \
             -H "Content-Type: application/json" \
             -d '{
                 "name": "Test workflow",
@@ -164,7 +164,7 @@ API Workflow is a feature in ScrapeAutomate that allows users to save, and reuse
         To archive a workflow you need to set an DELETE request to the following api, with the workflow id you want to archive and your api key for authentication.
 
         ```bash
-        curl -X DELETE "https://api.example.com/workflow/archive/${workflowId}?api_key=YOUR_API_KEY"
+        curl -X DELETE "https://api.scrapeautomate.com/api/workflow/archive/${workflowId}?api_key=YOUR_API_KEY"
         ```
 
         After you send the request you will notice that your workflow has been automatically archived. Once a workflow has been archived you will no longer be able to edit or use the workflow. If you would like to revert this you may unacrhive the workflow.
@@ -174,7 +174,7 @@ API Workflow is a feature in ScrapeAutomate that allows users to save, and reuse
         If you would like to unarchive a workflow you need to send an POST request to the following api, with the workflow id you want to unarchive and your api key.
 
         ```bash
-        curl -X POST "https://api.example.com/workflow/unarchive/${workflowId}?api_key=YOUR_API_KEY"
+        curl -X POST "https://api.scrapeautomate.com/api/workflow/unarchive/${workflowId}?api_key=YOUR_API_KEY"
         ```
 
         Once you send an request and if everything is successful you will be able to use and edit that workflow again.
@@ -184,7 +184,7 @@ API Workflow is a feature in ScrapeAutomate that allows users to save, and reuse
         If you would like to edit the name or the configuration of the workflow, its very simple. You just need to send an PATCH to the following api with the field you would like to update such as the name or the config field. No other field is editable. Here is an example:
 
         ```bash
-        curl -X PATCH "https://api.example.com/workflow/edit/${workflowId}?api_key=YOUR_API_KEY" \
+        curl -X PATCH "https://api.scrapeautomate.com/api/workflow/edit/${workflowId}?api_key=YOUR_API_KEY" \
             -H "Content-Type: application/json" \
             -d '{
                 "name": "Updated name",

@@ -12,7 +12,7 @@ To block ads, include the `block_ads` query parameter in your request and set it
 
 ```http
 GET /scraper?api_key=<exampleToken>&render=true&url=https%253A%252F%252Fexample.com%252F&block_ads=true HTTP/1.1
-Host: <your_api_host>
+Host: api.scrapeautomate.com
 ```
 
 <Note>
@@ -26,7 +26,7 @@ Chat widgets can be distracting and unnecessary. For example, if you are taking 
 
 ```http
 GET /scraper?api_key=<exampleToken>&render=true&url=https%253A%252F%252Fexample.com%252F&block_chat_widgets=true HTTP/1.1
-Host: <your_api_host>
+Host: api.scrapeautomate.com
 ```
 
 <Note>
@@ -40,7 +40,7 @@ Cookie banners often appear due to privacy regulations. They may require user in
 
 ```http
 GET /scraper?api_key=<exampleToken>&render=true&url=https%253A%252F%252Fexample.com%252F&block_cookie_banners=true HTTP/1.1
-Host: <your_api_host>
+Host: api.scrapeautomate.com
 ```
 
 ## Blocking Resources
@@ -65,7 +65,7 @@ To block resources, specify the resource types you want to block. Separate multi
 
 ```http
 GET /scraper?api_key=<exampleToken>&render=true&url=https%253A%252F%252Fexample.com%252F&block_resources=image%2C%20media%2C%20font HTTP/1.1
-Host: <your_api_host>
+Host: api.scrapeautomate.com
 ```
 
 <Note>
