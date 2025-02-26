@@ -5,7 +5,7 @@ description: 'Learn how to use different proxy types and locations with ScrapeAu
 
 ## Proxy type
 
-detected. To prevent this, ScrapeAutomate gives flexibility in choosing the type of proxies you want to use. ScrapeAutomate has a variety of proxies available, and we also handle the proxy rotation for you to ensure that the same proxy isn't being used twice.
+Some websites require better proxies to scrape them, as a lot of them get easily detected. To prevent this, ScrapeAutomate gives flexibility in choosing the type of proxies you want to use. ScrapeAutomate has a variety of proxies available, and we also handle the proxy rotation for you to ensure that the same proxy isn't being used twice.
 
 To customize the proxy type, use the `proxy_type` query parameter to select better proxies. We use datacenter proxies by default, but you can specify proxies like residential, datacenter, or other available options. The types of proxies are entirely dynamic, and based on the proxy type, there could be a credit multiplier, which you can easily view on the dashboard builder page.
 
@@ -31,21 +31,25 @@ curl --request GET \
 
 The `proxy_country` value is retrieved from the database. Let's say the specified country code does not exist in the database. In that case, the request will fail with an error that shows the proxy is unavailable.
 
-## Frequently Asked Questions (FAQ)
+## FAQ
 
-<Accordion title="Why should I use proxies?">
-  {' '}
-  Some websites have better bot protection than others; using better types of proxies,
-  like residential or verified proxies, allows you to scrape easily without getting
-  as many errors. However, these are more costly as they increase your chance of
-  getting more successful requests.{' '}
-</Accordion> <Accordion title="Can I use my own proxies with ScrapeAutomate?">
-  {' '}
-  You can't specify your proxies with ScrapeAutomate as it makes it harder for us
-  to scrape successfully and may increase the chance of failure and costs.{' '}
-</Accordion> <Accordion title="How much do different types of proxies cost?">
-  {' '}
-  Each proxy type has its own multiplier, which affects the cost of the proxy. By
-  default, datacenter proxies don't cost anything extra, but selecting other types
-  of proxies will increase the cost based on the multiplier.{' '}
-</Accordion>
+<AccordionGroup>
+  <Accordion title="Why should I use proxies?">
+    {' '}
+    Some websites have better bot protection than others; using better types of proxies,
+    like residential or verified proxies, allows you to scrape easily without getting
+    as many errors. However, these are more costly as they increase your chance of
+    getting more successful requests.{' '}
+  </Accordion>{' '}
+  <Accordion title="Can I use my own proxies with ScrapeAutomate?">
+    {' '}
+    You can't specify your proxies with ScrapeAutomate as it makes it harder for
+    us to scrape successfully and may increase the chance of failure and costs.{' '}
+  </Accordion>{' '}
+  <Accordion title="How much do different types of proxies cost?">
+    {' '}
+    Each proxy type has its own multiplier, which affects the cost of the proxy.
+    By default, datacenter proxies don't cost anything extra, but selecting other
+    types of proxies will increase the cost based on the multiplier.{' '}
+  </Accordion>
+</AccordionGroup>

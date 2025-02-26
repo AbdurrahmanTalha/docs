@@ -29,11 +29,12 @@
   "navigation": [
     {
       "group": "Get Started",
-      "pages": ["introduction", "overview", "essentials/rendering"]
+      "pages": ["introduction", "overview"]
     },
     {
       "group": "Core Features",
       "pages": [
+        "essentials/rendering",
         "essentials/blocking",
         "essentials/output",
         "essentials/proxies"

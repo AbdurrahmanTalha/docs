@@ -31,7 +31,7 @@ curl --request GET \
 
 ## Markdown
 
-ScrapeAutomate allows you to generate markdowns from a webpage very easily. By including the markdown=true parameter in your request, the response will be returned in Markdown format. This is useful for extracting content for LLMs or simplifying web data for better readability.
+ScrapeAutomate allows you to generate markdowns from a webpage very easily. By including the `markdown=true` parameter in your request, the response will be returned in Markdown format. This is useful for extracting content for LLMs or simplifying web data for better readability.
 
 You can use this with both javascript rendering enabled or disabled, but you might need to use javascript rendering when loading dynamic content from a webpage.
 
@@ -99,8 +99,23 @@ One important thing to note is that if you use a webhook, you will always receiv
 
 This functionality also applies to API workflows. Just ensure that you include the webhook URL in the query parameters when creating or editing the workflow. This way, when you send a request to the scraper route, the response will be delivered directly to the specified webhook.
 
-Currently, we do not support multiple output types. However, in the near future, you will have the ability to select multiple output types!
+## FAQ
 
-Yes, you can use a webhook with workflows. Just make sure to set the webhook when creating or edit a workflow.
+<AccordionGroup>
 
-By default, we already wait for the entire webpage to load before returning a response!
+<Accordion title="Can I use multiple output types?">
+  Currently, we do not support multiple output types. However, in the near
+  future, you will have the ability to select multiple output types!
+</Accordion>
+
+<Accordion title="Can I use a webhook with API workflows?">
+  Yes, you can use a webhook with workflows. Just make sure to set the webhook
+  when creating or edit a workflow.
+</Accordion>
+
+<Accordion title="How can I ensure that the entire webpage has loaded before returning an response?">
+  By default, we already wait for the entire webpage to load before returning a
+  response!
+</Accordion>
+
+</AccordionGroup>
