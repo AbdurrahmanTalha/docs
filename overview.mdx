@@ -53,7 +53,7 @@ You must include the `api_key` in every request as a query parameter; otherwise,
 
 ```sh
 curl --request GET \
-  --url '<EnvValue name="dashboardAPI"/>/scraper?api_key=<exampleToken>'
+  --url 'https://api.scrapeautomate.com/scraper?api_key=<exampleToken>'
 ```
 
 <Warning>
@@ -74,7 +74,7 @@ After encoding the URL, pass it in the query parameter named `url` as shown belo
 
 ```shell
 curl --request GET \
-  --url '<EnvValue name="dashboardAPI"/>/scraper?api_key=<exampleToken>&url=https%3A%2F%2Fexample.com''
+  --url 'https://api.scrapeautomate.com/scraper?api_key=<exampleToken>&url=https%3A%2F%2Fexample.com''
 ```
 
 <Note>
@@ -88,7 +88,7 @@ The **render** parameter is a boolean value that determines whether ScrapeAutoma
 
 ```shell
 curl --request GET \
-  --url '<EnvValue name="dashboardAPI"/>/scraper?api_key=<exampleToken>&render=true&url=https%3A%2F%2Fexample.com''
+  --url 'https://api.scrapeautomate.com/scraper?api_key=<exampleToken>&render=true&url=https%3A%2F%2Fexample.com''
 ```
 
 <Info>

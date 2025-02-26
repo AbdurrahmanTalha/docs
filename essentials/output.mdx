@@ -13,7 +13,7 @@ Example request:
 
 ```bash
 curl --request GET \
-  --url 'https://api.scrapeautomate.com/api/scraper?api_key=<exampleTOken>&render=false&url=https%3A%2F%2Fexample.com%2F'
+  --url 'https://api.scrapeautomate.com/scraper?api_key=<exampleTOken>&render=false&url=https%3A%2F%2Fexample.com%2F'
 ```
 
 ```html
@@ -39,7 +39,7 @@ Remember, ScrapeAutomate automatically removes unnecessary elements, such as nav
 
 ```bash
 curl --request GET \
-  --url 'https://api.scrapeautomate.com/api/scraper?url=https%3A%2F%2Fexample.com%2F&api_key=<exampleTOken>&markdown=true'
+  --url 'https://api.scrapeautomate.com/scraper?url=https%3A%2F%2Fexample.com%2F&api_key=<exampleTOken>&markdown=true'
 ```
 
 ```md
@@ -65,7 +65,7 @@ To capture a screenshot of the visible area, include the screenshot query parame
 
 ```bash
 curl --request GET \
-  --url 'https://api.scrapeautomate.com/api/scraper?api_key=<exampleTOken>&render=true&url=https%3A%2F%2Fexample.com%2F&screenshot=true'
+  --url 'https://api.scrapeautomate.com/scraper?api_key=<exampleTOken>&render=true&url=https%3A%2F%2Fexample.com%2F&screenshot=true'
 ```
 
 ### Full Page Screenshot
@@ -74,7 +74,7 @@ To capture a screenshot of the entire page, set the screenshot_full_page paramet
 
 ```bash
 curl --request GET \
-  --url 'https://api.scrapeautomate.com/api/scraper?api_key=<exampleTOken>&render=true&url=https%3A%2F%2Fexample.com%2F&screenshot_full_page=true'
+  --url 'https://api.scrapeautomate.com/scraper?api_key=<exampleTOken>&render=true&url=https%3A%2F%2Fexample.com%2F&screenshot_full_page=true'
 ```
 
 ## Webhook
@@ -83,7 +83,7 @@ If you prefer to have your responses sent to a webhook instead of receiving them
 
 ```bash
 curl --request GET \
-  --url 'https://api.scrapeautomate.com/api/scraper?api_key=<exampleTOken>&render=true&url=https%253A%252F%252Fexample.com%252Fees&config=%7B%22window_width%22%3A1920%2C%22window_height%22%3A1080%7D&webhook_url=https%3A%2F%2Fwebhook.site%2F7132edb4-8590-4bc0-9055-30e2153936d1'
+  --url 'https://api.scrapeautomate.com/scraper?api_key=<exampleTOken>&render=true&url=https%253A%252F%252Fexample.com%252Fees&config=%7B%22window_width%22%3A1920%2C%22window_height%22%3A1080%7D&webhook_url=https%3A%2F%2Fwebhook.site%2F7132edb4-8590-4bc0-9055-30e2153936d1'
 ```
 
 When you call the API, it will automatically send the response to the specified webhook instead of returning the response data directly to the requester. However, you will still receive a confirmation indicating whether or not the webhook was successfully triggered. Here's an example:

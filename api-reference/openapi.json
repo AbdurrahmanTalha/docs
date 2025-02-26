@@ -211,10 +211,7 @@
                         "description": "Delay in milliseconds"
                       }
                     },
-                    "required": [
-                      "selector",
-                      "text"
-                    ]
+                    "required": ["selector", "text"]
                   },
                   "click": {
                     "type": "string",
@@ -372,10 +369,7 @@
                                   "minimum": 0
                                 }
                               },
-                              "required": [
-                                "selector",
-                                "text"
-                              ]
+                              "required": ["selector", "text"]
                             },
                             "click": {
                               "type": "string",
@@ -402,19 +396,14 @@
                         "type": "string"
                       }
                     },
-                    "required": [
-                      "url"
-                    ],
+                    "required": ["url"],
                     "additionalProperties": false
                   },
                   "name": {
                     "type": "string"
                   }
                 },
-                "required": [
-                  "config",
-                  "name"
-                ],
+                "required": ["config", "name"],
                 "additionalProperties": false
               }
             }
@@ -467,6 +456,35 @@
             "description": "Workflow retrieved successfully"
           }
         }
+      }
+    },
+    "/api/workflow/requests/${id}": {
+      "get": {
+        "summary": "Get all requests made by a workflow",
+        "operationId": "getRequestsUsingWorkflow",
+        "responses": {
+          "200": {
+            "description": "List all requests using workflow"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api_key",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
       }
     },
     "/api/workflow/${id}": {
@@ -543,10 +561,7 @@
                                   "minimum": 0
                                 }
                               },
-                              "required": [
-                                "selector",
-                                "text"
-                              ]
+                              "required": ["selector", "text"]
                             },
                             "click": {
                               "type": "string",
@@ -573,9 +588,7 @@
                         "type": "string"
                       }
                     },
-                    "required": [
-                      "url"
-                    ],
+                    "required": ["url"],
                     "additionalProperties": false
                   },
                   "name": {
@@ -650,35 +663,6 @@
             "description": "Workflow unarchived workflow successfully"
           }
         }
-      }
-    },
-    "/api/workflow/requests/${id}": {
-      "get": {
-        "summary": "Get all requests made by a workflow",
-        "operationId": "getRequestsUsingWorkflow",
-        "responses": {
-          "200": {
-            "description": "List all requests using workflow"
-          }
-        },
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "api_key",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
       }
     }
   }

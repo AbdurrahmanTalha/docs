@@ -37,7 +37,7 @@ API Workflow is a feature in ScrapeAutomate that allows users to save, and reuse
         After copying the ID, send the workflow id as a query parameter with your api key to run the scraping request, After you run the request you should get the response:
 
         ```bash
-        curl --request GET --url 'https://api.scrapeautomate.com/api/scraper?api_key=YOUR_API_KEY&workflow_id=cm1zwux5s000012i655qokya5'
+        curl --request GET --url 'https://api.scrapeautomate.com/scraper?api_key=YOUR_API_KEY&workflow_id=cm1zwux5s000012i655qokya5'
         ```
 
         Keep in mind that if you are using any kind of webhook, you will get the response at the webhook rather then directly getting the response. Instead you might an response saying:

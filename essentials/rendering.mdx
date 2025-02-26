@@ -18,7 +18,7 @@ To enable the Javascript rendering you need to pass `render=true` with the reque
 
 ```powershell
 curl --request GET \
---url 'https://api.scrapeautomate.com/api/scraper?api_key=<exampleToken>&render=true&url=https%3A%2F%2Fexample.com'
+--url 'https://api.scrapeautomate.com/scraper?api_key=<exampleToken>&render=true&url=https%3A%2F%2Fexample.com'
 ```
 
 ### Features of JavaScript Rendering
@@ -45,7 +45,7 @@ In the following example, we set the window width to 1920 pixels:
 ```powershell
 
 curl --request GET \
---url 'https://api.scrapeautomate.com/api/scraper?api_key=<exampleToken>&render=true&url=https%3A%2F%2Fexample.com%2F&window_width=1920'
+--url 'https://api.scrapeautomate.com/scraper?api_key=<exampleToken>&render=true&url=https%3A%2F%2Fexample.com%2F&window_width=1920'
 
 ```
 
@@ -57,7 +57,7 @@ In this example, we set the window height to 1080 pixels:
 
 ```powershell
 curl --request GET \
---url 'https://api.scrapeautomate.com/api/scraper?api_key=<exampleToken>&render=true&url=https%3A%2F%2Fexample.com%2F&window_height=1080'
+--url 'https://api.scrapeautomate.com/scraper?api_key=<exampleToken>&render=true&url=https%3A%2F%2Fexample.com%2F&window_height=1080'
 ```
 
 ### Using Both Width & Height Together
@@ -68,7 +68,7 @@ In this example, we set the browser window to 1920x1080:
 
 ```powershell
 curl --request GET \
---url 'https://api.scrapeautomate.com/api/scraper?api_key=<exampleToken>&render=true&url=https%3A%2F%2Fexample.com%2F&window_height=1080&window_width=1920'
+--url 'https://api.scrapeautomate.com/scraper?api_key=<exampleToken>&render=true&url=https%3A%2F%2Fexample.com%2F&window_height=1080&window_width=1920'
 ```
 
 <Note>
@@ -98,7 +98,7 @@ Here is an example of using instructions in a request:
 
 ```powershell
 curl --request GET \
---url 'https://api.scrapeautomate.com/api/scraper?api_key=<exampleToken>&render=true&url=https%3A%2F%2Fexample.com%2F&instructions=%5B%7B%22wait%22%3A%22.btn%22%7D%2C%7B%22click%22%3A%22.btn2%22%7D%5D'
+--url 'https://api.scrapeautomate.com/scraper?api_key=<exampleToken>&render=true&url=https%3A%2F%2Fexample.com%2F&instructions=%5B%7B%22wait%22%3A%22.btn%22%7D%2C%7B%22click%22%3A%22.btn2%22%7D%5D'
 ```
 
 ### Waiting for a selector
